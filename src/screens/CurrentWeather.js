@@ -1,7 +1,8 @@
 import React from "react";
-import { SafeAreaView, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import tw from "twrnc";
 import Icons from "@expo/vector-icons/Feather";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const CurrentWeather = () => {
   return (

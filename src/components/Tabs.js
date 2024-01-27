@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import CurrentWeather from "../screens/CurrentWeather";
 import UpcomingWeather from "../screens/UpcomingWeather";
 import Icons from "@expo/vector-icons/Feather";
+import City from "../screens/City";
 
 const Tab = createBottomTabNavigator();
 
@@ -13,7 +14,7 @@ const Tabs = () => {
       screenOptions={{
         tabBarLabelStyle: { fontSize: 18, fontWeight: "bold" },
         headerShown: false,
-        tabBarStyle: { backgroundColor: "white", height: 55 },
+        tabBarStyle: { backgroundColor: "white", height: 58 },
         tabBarActiveTintColor: "tomato",
         tabBarInactiveTintColor: "black",
       }}
@@ -44,6 +45,17 @@ const Tabs = () => {
               size={25}
               color={focused ? "tomato" : "black"}
             />
+          ),
+        }}
+      />
+
+      {/* City */}
+      <Tab.Screen
+        name="City"
+        component={City}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Icons name="home" size={25} color={focused ? "tomato" : "black"} />
           ),
         }}
       />
