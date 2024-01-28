@@ -17,7 +17,7 @@ export const useGetWeather = () => {
 
       const data = await res.json();
       setWeather(data);
-      console.log("Weather Data", data);
+      //   console.log("Weather Data", data);
     } catch (error) {
       setError("Could not fetch Weather Data");
     } finally {
