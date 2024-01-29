@@ -2,6 +2,7 @@ import { Text, View } from "react-native";
 import React from "react";
 import tw from "twrnc";
 import Icon from "@expo/vector-icons/Feather";
+import moment from "moment";
 
 const ListItem = (props) => {
   const { dt_txt, min, max, condition } = props;
@@ -11,7 +12,8 @@ const ListItem = (props) => {
         <Icon name="cloud" size={65} />
       </View>
       <View style={tw`pl-10`}>
-        <Text style={tw`text-2xl`}>{dt_txt}</Text>
+        <Text style={tw`text-2xl`}>{moment(dt_txt).format("dddd")}</Text>
+        <Text style={tw`text-lg`}>{moment(dt_txt).format("h:mm:ss a")}</Text>
         <Text style={tw`text-xl`}>{condition}</Text>
         <View style={tw`flex-row gap-x-4`}>
           <Text style={tw`text-xl`}>{min}°</Text>

@@ -5,7 +5,7 @@ import Icons from "@expo/vector-icons/Feather";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const CurrentWeather = ({ weatherData }) => {
-  console.log("Current Weather", weatherData);
+  // console.log("Current Weather", weatherData);
   const {
     main: { temp, feels_like, temp_max, temp_min, humidity, pressure },
     weather,
