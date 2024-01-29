@@ -12,8 +12,7 @@ export default function App() {
   if (weather && weather.list && !loading) {
     return (
       <NavigationContainer>
-        <Tabs />
-        {/* <CurrentWeather /> */}
+        <Tabs weather={weather} />
       </NavigationContainer>
     );
   }
