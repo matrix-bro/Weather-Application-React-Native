@@ -3,6 +3,7 @@ import { Text, View } from "react-native";
 import tw from "twrnc";
 import Icons from "@expo/vector-icons/Feather";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { WeatherType } from "../utils/WeatherType";
 
 const CurrentWeather = ({ weatherData }) => {
   // console.log("Current Weather", weatherData);
@@ -13,10 +14,13 @@ const CurrentWeather = ({ weatherData }) => {
     visibility,
   } = weatherData;
 
+  const weatherCondition = weather[0]?.main;
+  console.log(weatherCondition);
+
   return (
     <SafeAreaView style={tw`h-full bg-sky-300 flex pt-25`}>
       <View style={tw`items-center`}>
-        <Icons name="cloud" size={100} />
+        <Icons name={WeatherType[weatherCondition]?.icon} size={100} />
         <Text style={tw`font-bold text-3xl`}>{temp}°</Text>
         <Text style={tw` text-xl`}>Feels like {feels_like}°</Text>
       </View>
@@ -26,7 +30,10 @@ const CurrentWeather = ({ weatherData }) => {
       </View>
       <View style={tw`items-center pt-8`}>
         <Text style={tw` text-xl capitalize`}>{weather[0].description}</Text>
-        <Text style={tw` text-xl`}>You could live in the clouds</Text>
+        <Text style={tw` text-xl`}>
+          {WeatherType[weatherCondition]?.message}
+        </Text>
+        {/* <Text style={tw` text-xl`}>You could live in the clouds</Text> */}
       </View>
       <View style={tw`flex-row pt-8 px-6 gap-4`}>
         <View>
